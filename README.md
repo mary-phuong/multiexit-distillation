@@ -1,4 +1,4 @@
-# Distillation-Based Training for Multi-Exit Architectures ([Mary Phuong](https://mary-phuong.github.io), [Christoph H. Lampert](http://pub.ist.ac.at/~chl/), ICCV 2019)
+# Distillation-Based Training for Multi-Exit Architectures (<a href="https://mary-phuong.github.io" target="_blank">Mary Phuong</a>, <a href="http://pub.ist.ac.at/~chl/" target="_blank">Christoph H. Lampert</a>, ICCV 2019)
 
 We present a new method for training *multi-exit architectures*.
 A multi-exit architecture looks like this:

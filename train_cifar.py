@@ -5,9 +5,7 @@ import utils
 @ex.config
 def config_new():
     gpu = 0  # single GPU ordinal or list, or -1 for CPU
-    autoname = f'msd11_cif100cls80_ce'
-    ####
-    snapshot_name = ''
+    snapshot_name = 'test:0'
     parent_snapshot = ''
     ####
     
@@ -70,7 +68,7 @@ def config_new():
     batch_size = 64 #!
     val_batch_size = 320
     time_budget = 0  # in hours
-    n_epochs = 300
+    n_epochs = 1
     cf_scheduler = dict(
         call = 'MultiStepLR',
         milestones = [150, 225],
@@ -86,12 +84,6 @@ def config_new():
         call = 'ScaleParamInit',
         scale = 1.0,
     )
-    
-    #### autofill #################################
-    if snapshot_name:
-        autoname = snapshot_name.split(':')[0]
-    elif autoname:
-        snapshot_name = utils.numbered_snapshot(autoname)
 
 
 if __name__ == '__main__':

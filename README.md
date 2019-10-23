@@ -25,10 +25,9 @@ This repo provides code for that paper.
 
 2. Create sub-directories `data` and `snapshots` in the repo root directory.
 
-3. Download `torchvision.datasets.CIFAR100` into `data`. E.g. run the following from the repo root directory:
+3. Download `torchvision.datasets.CIFAR100` into `data`. You can do this by running the following from the repo root directory:
 ```
-python -c 'import torchvision; print(torchvision.datasets.CIFAR100("./data", download=True))'
-
+python -c 'import torchvision; torchvision.datasets.CIFAR100("./data", download=True)'
 ```
 
 

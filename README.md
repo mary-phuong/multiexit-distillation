@@ -17,11 +17,11 @@ This repo provides code for that paper.
 
 1. Install the following (though other setups may work too):
 
-..* python 3.6.3
-..* torch 0.4.0
-..* torchvision 0.2.1
-..* pandas
-..* sacred
+  * python 3.6.3
+  * torch 0.4.0
+  * torchvision 0.2.1
+  * pandas
+  * sacred
 
 2. Create sub-directories `data` and `snapshots` in the repo root directory.
 

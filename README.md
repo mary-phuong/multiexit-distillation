@@ -33,6 +33,11 @@ python -c 'import torchvision; torchvision.datasets.CIFAR100("./data", download=
 
 ## Training
 
+To train a multi-exit network by distillation-based training:
+
+1. Specify hyperparameters and other options by editing the script `train_cifar.py`. (Sensible default values are provided.)
+
+2. Run 
 ```
 python train_cifar.py
 ```

@@ -4,17 +4,18 @@ import utils
 
 @ex.config
 def config_new():
-    gpu = 0  # single GPU ordinal or list, or -1 for CPU
+    gpu = 0               # single GPU ordinal or list, or -1 for CPU
     snapshot_name = 'test:0'
-    parent_snapshot = ''
-    ####
-    
-    cf_net = dict(
-        call = 'MsdNet', #!
+    parent_snapshot = ''  # If empty, trains from scratch. Otherwise loads the
+                          # specified snapshot and continues training.
+
+                          
+    cf_net = dict(        # MSDNet architecture parameters
+        call = 'MsdNet',
         in_shape = 32,
         out_dim = 100,
         n_scales = 3,
-        n_exits = 11, #!
+        n_exits = 11,
         nlayers_to_exit = 4,
         nlayers_between_exits = 2,
         nplanes_mulv = [6, 12, 24],
@@ -25,27 +26,33 @@ def config_new():
         exit_width = 128,
         btneck_widths = [4, 4, 4],
     )
-    cf_loss = dict(
+    
+    cf_loss = dict(       # train with classification loss only
+        call = 'ClassificationOnlyLoss',
         n_exits = cf_net['n_exits'],
         acc_tops = [1, 5],
-        
-        call = 'MultipleCrossEntropyLoss',
-        
-        # call = 'MaxprobMultiFrzDistLaterLoss',
-        # call = 'MaxprobMultiFrzDistLoss',
-        # C = 0.5,
-        # maxprob = 0.5,
-        # weight_last = True,
-        # global_scale = 2.0 * 5/cf_net['n_exits'],
-        # freeze = False, #!
-
-        # call = 'MultiFrzDistLossConstTemp',
-        # C = 0.5,
-        # T = 4.0,
-        # weight_last = True,
-        # global_scale = 2.0 * 5/cf_net['n_exits'],
-        # freeze = False,
     )
+
+    # cf_loss = dict(       # distillation-based training  
+    #     call = 'DistillationBasedLoss',
+    #     n_exits = cf_net['n_exits'],
+    #     acc_tops = [1, 5],
+        
+    #     C = 0.5,
+    #     maxprob = 0.5,
+    #     global_scale = 2.0 * 5/cf_net['n_exits'],
+    # )
+
+    # cf_loss = dict(
+    #     call = 'MultiFrzDistLossConstTemp',
+    #     C = 0.5,
+    #     T = 4.0,
+    #     weight_last = True,
+    #     global_scale = 2.0 * 5/cf_net['n_exits'],
+    #     freeze = False,
+    # )
+
+    
     cf_trn = dict(
         call = 'Cifar100',
         n_per_class = 80,

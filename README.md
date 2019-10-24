@@ -41,3 +41,14 @@ To train a multi-exit network by distillation-based training:
 ```
 python train_cifar.py
 ```
+
+## Evaluation
+
+To evaluate a trained network on test data:
+
+1. Specify options by editing the script `eval.py`.
+
+2. Run 
+```
+python eval.py
+```

@@ -9,7 +9,7 @@ A multi-exit architecture looks like this:
 
 We propose to train such architectures by transferring knowledge from late exits (<img src="https://github.com/mary-phuong/multiexit-distillation/blob/master/images/ynhat.png" height="15">) to early exits (<img src="https://github.com/mary-phuong/multiexit-distillation/blob/master/images/y1hat.png" height="15">, <img src="https://github.com/mary-phuong/multiexit-distillation/blob/master/images/y2hat.png" height="15">, ...), via so-called *distillation*, and show that (especially) early exits benefit substantially.
 
-Read more in the [paper](https://mary-phuong.github.io/multiexit_distillation.pdf).
+Read more in the [paper](http://openaccess.thecvf.com/content_ICCV_2019/html/Phuong_Distillation-Based_Training_for_Multi-Exit_Architectures_ICCV_2019_paper.html).
 This repo provides code for that paper.
 
 
